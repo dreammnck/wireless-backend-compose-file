@@ -1,0 +1,12 @@
+version: '3.6'
+services:
+  backend:
+    image: dreammnck/wireless-project:1.0.0
+    container_name: backend
+    depends_on:
+      - mqtt_broker
+    restart: always
+    ports:
+      - 8080:8080
+    env_file:
+      - .env
